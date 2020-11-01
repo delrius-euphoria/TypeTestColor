@@ -1,4 +1,9 @@
 Ver 1.00
     - Basic game requirment features
     -Added Player leaderboards
-    
+
+Ver 2.00
+    - Bug Fixes
+    - About panel
+    - Changed score logic
+    - More competetive

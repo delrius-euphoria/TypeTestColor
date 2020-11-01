@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-#import text
 
 
 class PlaceholderEntry(ttk.Entry):
@@ -94,7 +93,7 @@ class ToolTip():
     releasekey - Which key hides the placeholder\n
     bg - Background color of tooltip window(default-yellow-ish), accepts hex and standard colors\n
     fg - Foreground color/Font color of the text, accepts hex and standard colors\n
-    fadeout - Default set to 'enabled', set to 'disabled' to disable fadeout or tooltip\n
+    fadeout - Default set to 'enabled', set to 'disabled' to disable fadeout of tooltip\n
     ISSUE: What if user want it on left side?
     '''
 
@@ -178,42 +177,3 @@ class ToolTip():
 
         else:
             raise tk.TclError('Unknown value for option -fadeout')
-'''
-if __name__ == '__main__':
-    root = tk.Tk()
-    root.title('Custom tk widgets')
-    root.focus_force()
-
-    heading = ('helvetica', 18)
-    texts = ('helvetica', 11)
-
-    tpmessage = text.placeholder
-    hvmessage = text.tooltip
-
-    head = tk.Label(root, text='Custom tkinter widgets', font=heading)
-    head.grid(row=0, column=0, columnspan=2, pady=10)
-
-    placeholderlabel = tk.Label(
-        root, text='This is a Placeholder Entry', font=texts)
-    placeholderlabel.grid(row=1, column=0, padx=(5, 15), pady=10)
-
-    placeholderent = PlaceholderEntry(
-        root, 'Type something here...', font=texts, width=25)
-    placeholderent.grid(row=1, column=1, padx=(5, 5), ipady=5)
-    placeholderent1 = PlaceholderEntry(
-        root, 'Type something here...', font=texts, width=25)
-    placeholderent1.grid(row=4, column=1, padx=(5, 5), ipady=5)
-
-    e = tk.Entry(root)
-    e.grid(row=5)
-
-    entrytooltip = ToolTip(placeholderent, text=tpmessage, fadeout='disabled')
-
-    hoverlabel = tk.Label(
-        root, text='Hover over widgets here to see tooltips', font=texts)
-    hoverlabel.grid(row=2, columnspan=2, column=0, pady=20)
-
-    labeltooltip = ToolTip(hoverlabel, text=hvmessage)
-
-    root.mainloop()
-'''
